@@ -22,4 +22,5 @@ master 分支是原始代码。
 - [ch01 - Pyhton 对象初探](ch01.md)
 - [ch02 - Pyhton 中的整数对象](ch02.md)
 - [ch03 - Pyhton 中的字符串对象](ch03.md)
+- [ch04 - Python 中的 List 对象](ch04.md)
 
