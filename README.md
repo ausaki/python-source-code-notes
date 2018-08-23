@@ -51,4 +51,5 @@ master 分支是原始代码。
 - 第二部分
 
     - [ch07 - Python的编译结果——Code对象与pyc文件](ch07.md)
+    - [ch08 - Python 虚拟机框架](ch08.md)
 
