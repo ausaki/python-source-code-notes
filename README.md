@@ -54,4 +54,6 @@ master 分支是原始代码。
     - [ch08 - Python 虚拟机框架](ch08.md)
     - [ch09 - Python虚拟机中的一般表达式](ch09.md)
     - [ch010 - Python虚拟机中的控制流](ch10.md)
+    - [ch011 - Python虚拟机中的函数机制](ch11.md)
+    - [ch012 - Python虚拟机中的类机制](ch12.md)
 
