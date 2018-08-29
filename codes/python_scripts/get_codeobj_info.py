@@ -12,8 +12,42 @@ fp.close()
 
 codeobj = compile(src, f_name, 'exec')
 
-print 'f_consts:', codeobj.co_consts
-print 'code:', codeobj.co_code.encode('hex')
-print 'lnotab:', codeobj.co_lnotab
+def display(codeobj):
+    info_keys = [
+        'co_filename',
+        'co_name',
+        'co_firstlineno',
+        'co_flags',
+        'co_lnotab',
+        'co_names',
+        'co_argcount',
+        'co_nlocals',
+        'co_varnames',
+        'co_consts',
+        'co_cellvars',
+        'co_freevars',
+        'co_code',
+        'co_stacksize',
+    ]
+    print 'code obj info:'
+    for k in info_keys:
+        v = getattr(codeobj, k)
+        print k, ':',
+        if k == 'co_code':
+            print
+            print dis.dis(codeobj)
+        elif k == 'co_consts':
+            print
+            for const in v:
+                if hasattr(const, 'co_code'):
+                    print '----'
+                    display(const) 
+                    print '----'
+                else:
+                    print const
+        else:
+            print v
 
-print dis.dis(codeobj)
+
+display(codeobj)
+
