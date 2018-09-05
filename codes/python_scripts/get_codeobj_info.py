@@ -12,7 +12,13 @@ fp.close()
 
 codeobj = compile(src, f_name, 'exec')
 
-def display(codeobj):
+def print_indent(s, indent):
+    if indent == 0:
+        print s
+    else:
+        print ' ' * (4 * indent), s
+
+def display(codeobj, indent=0):
     info_keys = [
         'co_filename',
         'co_name',
@@ -29,25 +35,24 @@ def display(codeobj):
         'co_code',
         'co_stacksize',
     ]
-    print 'code obj info:'
+    print_indent('[code obj info] - [%s]' % codeobj.co_name, indent)
     for k in info_keys:
         v = getattr(codeobj, k)
-        print k, ':',
         if k == 'co_code':
-            print
-            print dis.dis(codeobj)
+            print_indent(k + ': ', indent)
+            codes = dis.dis(codeobj)
+            if codes is not None:
+                for l in codes.splitlines():
+                    print_indent(l, indent)
         elif k == 'co_consts':
-            print
+            print_indent(k + ': ', indent)
             for const in v:
                 if hasattr(const, 'co_code'):
-                    print '----'
-                    display(const) 
-                    print '----'
+                    display(const, indent + 1) 
                 else:
-                    print const
+                    print_indent(const, indent)
         else:
-            print v
-
+            print_indent(k + ': ' + str(v), indent)
 
 display(codeobj)
 
