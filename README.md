@@ -57,4 +57,7 @@ master 分支是原始代码。
     - [ch011 - Python虚拟机中的函数机制](ch11.md)
     - [ch012 - Python虚拟机中的类机制](ch12.md)
     - [ch013 - Python运行环境初始化](ch13.md)
+    - [ch014 - Python模块的动态加载机制](ch14.md)
+    - [ch015 - Python多线程机制](ch15.md)
+    - [ch016 - Python的内存管理机制](ch16.md)
 
