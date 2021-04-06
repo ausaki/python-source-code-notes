@@ -102,4 +102,4 @@ PyAPI_FUNC(void) _PyTrash_end(struct _ts *tstate);
 
 我最喜欢这样的注释, 对新加的某个特性进行详细的描述. 遗憾的是 CPython 的代码中有许多没有详细注释的代码, 对于刚开始阅读 CPython 代码的人来说非常难以理解.
 
-trashcan 的用法可以查看 tuple 的 tpdealloc 函数.
+trashcan 的用法可以查看 tuple 的 tp_dealloc 函数.
